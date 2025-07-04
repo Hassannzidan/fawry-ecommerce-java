@@ -15,23 +15,6 @@ public class AppUI extends JFrame {
 
     private final JTextArea outputArea;
 
-//    public AppUI() {
-//        setTitle("Fawry E-Commerce");
-//        setSize(600, 400);
-//        setDefaultCloseOperation(EXIT_ON_CLOSE);
-//        setLocationRelativeTo(null);
-//
-//        outputArea = new JTextArea();
-//        outputArea.setEditable(false);
-//        outputArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
-//        add(new JScrollPane(outputArea), BorderLayout.CENTER);
-//
-//        JButton checkoutButton = new JButton("Checkout");
-//        checkoutButton.addActionListener(e -> runCheckout());
-//        add(checkoutButton, BorderLayout.SOUTH);
-//
-//        setVisible(true);
-//    }
     public AppUI() {
         setTitle("Fawry E-Commerce");
         setSize(700, 500);
@@ -89,7 +72,7 @@ public class AppUI extends JFrame {
             });
         });
 
-        // Add buttons to bottom panel
+        // buttons
         JPanel bottomPanel = new JPanel(new FlowLayout());
         bottomPanel.add(checkoutButton);
         bottomPanel.add(testEmptyCartButton);
@@ -146,14 +129,14 @@ public class AppUI extends JFrame {
             }
         }));
 
-        // run checkout
+
         try {
             CheckoutService.checkout(customer, cart);
         } catch (RuntimeException ex) {
             outputArea.append("\nError: " + ex.getMessage());
         }
 
-        // return to default output
+    
         System.setOut(consoleStream);
     }
 }
