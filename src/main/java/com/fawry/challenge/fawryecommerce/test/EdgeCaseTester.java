@@ -12,7 +12,7 @@ public class EdgeCaseTester {
     public static void runAllTests() {
         System.out.println("=== Edge Case Tests ===\n");
 
-        // ✅ 1. Cart is empty
+        // Cart is empty
         try {
             Customer emptyCartCustomer = new Customer("Ali", 1000);
             Cart emptyCart = new Cart();
@@ -21,7 +21,7 @@ public class EdgeCaseTester {
             System.out.println("✔️ Cart is empty: " + e.getMessage());
         }
 
-        // ✅ 2. Expired product
+        // Expired product
         try {
             Customer expiredProductCustomer = new Customer("Mona", 1000);
             Product expired = new Cheese("Expired Cheese", 100, 2, 0.5, LocalDate.of(2020, 1, 1));
@@ -32,7 +32,7 @@ public class EdgeCaseTester {
             System.out.println("✔️ Expired product: " + e.getMessage());
         }
 
-        // ✅ 3. Out of stock
+        // Out of stock
         try {
             Customer outOfStockCustomer = new Customer("Sara", 1000);
             Product lowStockProduct = new Cheese("Cheese", 100, 1, 0.5, LocalDate.of(2025, 8, 1));
@@ -43,7 +43,7 @@ public class EdgeCaseTester {
             System.out.println("✔️ Out of stock: " + e.getMessage());
         }
 
-        // ✅ 4. Insufficient balance
+        // Insufficient balance
         try {
             Customer lowBalanceCustomer = new Customer("Youssef", 10);
             Product cheese = new Cheese("Cheese", 100, 2, 0.5, LocalDate.of(2025, 8, 1));
